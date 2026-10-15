@@ -1,0 +1,33 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "affiliate": {
+      "root": "apps/affiliate",
+      "framework": "nextjs"
+    },
+    "api": {
+      "root": "apps/api",
+      "framework": "hono"
+    },
+    "hub": {
+      "root": "apps/hub",
+      "framework": "nextjs"
+    },
+    "phantom": {
+      "root": "apps/phantom",
+      "framework": "vite"
+    },
+    "trust": {
+      "root": "apps/trust",
+      "framework": "vite"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "api"
+      }
+    }
+  ]
+}
